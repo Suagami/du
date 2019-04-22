@@ -24,7 +24,9 @@ public class FileSizeViewerLauncher {
     public static void main(String[] args) throws IOException {
         new FileSizeViewerLauncher().doMain(args);
     }
+
     private void doMain(String[] args) throws IOException {
+
         CmdLineParser parser = new CmdLineParser(this);
 
         try {
@@ -39,14 +41,17 @@ public class FileSizeViewerLauncher {
         }
 
         FileSizeViewer FSV = new FileSizeViewer(arguments);
+
         FSV.size();
-        if (cSize) {
+
+        if (cSize)
             FSV.getSum();
-        }
-        if (siSize) {
+
+
+        if (siSize)
             FSV.output(1000, cSize, hSize);
-        }
-        else FSV.output(1024, cSize, hSize);
+        else
+            FSV.output(1024, cSize, hSize);
 
     }
 

@@ -4,7 +4,7 @@ import java.util.*;
 
 import static java.lang.Math.round;
 
-public class FileSizeViewer {
+class FileSizeViewer {
 
     private final List<String> fileNames;
     Long sumSize = 0L;
@@ -14,7 +14,7 @@ public class FileSizeViewer {
         this.fileNames = fileNames;
     }
 
-    public int size() {
+    int size() {
             for (String name: this.fileNames) {
                 File tempFile = new File(name);
                 long tempSize;

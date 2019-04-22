@@ -7,13 +7,14 @@ import java.io.*;
 import java.util.*;
 
 
-public class FileSizeViewerTest {
+class FileSizeViewerTest {
     @Test
-    public void sizeTest() throws IOException {
+    void sizeTest() throws IOException {
 
         String name1 = "./Temp.txt";
         String name2 = "./folder/";
         String name3 = "./Temp2.txt";
+        String name4 = "./Temp3.txt";
 
         File tempFile1 = new File(name1);
         File tempFile2 = new File(name2);
@@ -28,16 +29,22 @@ public class FileSizeViewerTest {
         fileWriter.close();
 
         List<String> input = new ArrayList<String>();
+        List<String> input2 = new ArrayList<String>();
 
         input.add(name1);
         input.add(name2);
         input.add(name3);
 
-        FileSizeViewer FSV = new FileSizeViewer(input);
+        input2.add(name4);
+
+        FileSizeViewer test1FSV = new FileSizeViewer(input2);
+
+        FileSizeViewer test2FSV = new FileSizeViewer(input);
 
         Long testSumSize = tempFile1.length() + tempFile2.length()+ tempFile3.length();
 
-        FSV.size();
+        Assert.assertEquals(test1FSV.size(), 1);
+        Assert.assertEquals(test2FSV.size(), 0);
 
         List<Pair<String, Long>> testList = new ArrayList<Pair<String, Long>>();
 
@@ -49,11 +56,11 @@ public class FileSizeViewerTest {
         testList.add(testPair2);
         testList.add(testPair3);
 
-        Assert.assertEquals(FSV.table, testList);
+        Assert.assertEquals(test2FSV.table, testList);
 
-        FSV.getSum();
+        test2FSV.getSum();
 
-        Assert.assertEquals(FSV.sumSize, testSumSize);
+        Assert.assertEquals(test2FSV.sumSize, testSumSize);
     }
 
 }
