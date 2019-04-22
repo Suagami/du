@@ -9,10 +9,10 @@ import java.util.List;
 
 public class FileSizeViewerLauncher {
 
-    @Option(name = "-h", metaVar = "ReadableVer", usage = "Making file's size readable")
+    @Option(name = "-h", metaVar = "ReadableVersion", usage = "Making file's size readable")
     private boolean hSize;
 
-    @Option(name = "-c", metaVar = "SummaryS", usage = "Summary size counting")
+    @Option(name = "-c", metaVar = "TotalSize", usage = "Total size counting")
     private boolean cSize;
 
     @Option(name = "--si", metaVar = "DecimalBase", usage = "Changing base from 1024 to 1000")
