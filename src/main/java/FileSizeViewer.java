@@ -5,11 +5,10 @@ import java.util.*;
 import static java.lang.Math.round;
 
 public class FileSizeViewer {
+
     private final List<String> fileNames;
     Long sumSize = 0L;
     List<Pair<String, Long>> table = new ArrayList<Pair<String, Long>>();
-
-
 
     FileSizeViewer(List<String> fileNames) {
         this.fileNames = fileNames;
@@ -98,10 +97,5 @@ public class FileSizeViewer {
         }
 
     }
-  //  public long view(boolean h, boolean c, boolean si) {
-  //      if (c) {
-   //         List<Long> tempSizes = FileSizeViewer.size();
-  //      }
-//
 
 }
